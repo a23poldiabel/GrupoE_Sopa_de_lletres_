@@ -14,8 +14,8 @@ public class PrincipalCodigoSopa {
             System.out.println();
             System.out.println("Ingrese una palabra:");
             String palabraUsuario = input.nextLine();
-            /*if (palabraValida(palabraUsuario)) {
-                if (EncontraPalabra(matrizDeSopa, palabraUsuario, matrizDeSopaRojo)) {
+            if (palabraValida(palabraUsuario)) {
+               /* if (EncontraPalabra(matrizDeSopa, palabraUsuario, matrizDeSopaRojo)) {
                     casos++;
                     System.out.println("Correcto!!!");
                     System.out.println();
@@ -24,13 +24,25 @@ public class PrincipalCodigoSopa {
                     System.out.println("Incorrecto");
                     System.out.println();
                    PrintearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
-                }
+                }*/
             } else {
                 System.out.println("Palabra no valida");
-                PrintearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
-            }*/
+               // PrintearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+            }
         }
     }
-
+    /**
+     * With this function we are verifying if the input is valid.
+     * We will use an if loop to verify if the word length is less or the same as 10 characters
+     * and also if it's higher than 3 characters.
+     * If the word is valid, it will return true, else, it will return false.
+     * */
+    public static boolean palabraValida(String palabra) {
+        if (palabra.length() <= 10 && palabra.length() > 3){
+            return true;
+        } else {
+            return  false;
+        }
+    }
 
 }
