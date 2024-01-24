@@ -15,6 +15,7 @@ public class PrincipalCodigoSopa {
             System.out.println("Ingrese una palabra:");
             String palabraUsuario = input.nextLine();
             if (palabraValida(palabraUsuario)) {
+
                /* if (EncontraPalabra(matrizDeSopa, palabraUsuario, matrizDeSopaRojo)) {
                     casos++;
                     System.out.println("Correcto!!!");
