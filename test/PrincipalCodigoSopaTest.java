@@ -4,6 +4,7 @@ class PrincipalCodigoSopaTest {
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
+        int i = 0;
     }
 
     @org.junit.jupiter.api.AfterEach
