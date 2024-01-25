@@ -1,4 +1,5 @@
 import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.lang.String;
 import java.util.Scanner;
 
 public class PrincipalCodigoSopa {
@@ -45,27 +46,24 @@ public class PrincipalCodigoSopa {
         while (!fraseValida) {
             System.out.println("Ingresa la frase para crear la sopa de letras:");
             frase = input.nextLine();
-            if (validarFrase(frase)) {
-                fraseValida = true;
-                System.out.println("La frase cumple las condiciones.");
-            } else {
-                System.out.println("La frase no cumple las condiciones, intentalo de nuevo.");
-            }
         }
         return frase;
     }
-
 
     /**
      * Users are required to write a 100-character word under various conditions.
      * They need to be 100 exactly characters.
      * The input must consist solely of letters (uppercase) from 'A' to 'Z', numbers and special characters are not allowed.
      */
-    private static boolean validarFrase(String frase) {
-        return frase.length() == 100 && frase.matches("^[A-Z]*$");
+    public static boolean validarFrase(String frase){
+        if (frase.length() == 100 && frase.matches("^[A-Z]*$")) {
+            System.out.println("La frase cumple las condiciones.");
+            return true;
+        } else {
+            System.out.println("La frase no cumple las condiciones, intentalo de nuevo.");
+            return false;
+        }
     }
-
-
     /**
      * With this function we are verifying if the input is valid.
      * We will use an if loop to verify if the word length is less or the same as 10 characters
