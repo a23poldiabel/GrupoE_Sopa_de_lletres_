@@ -9,44 +9,44 @@ public class PrincipalCodigoSopa {
         boolean[][] matrizDeSopaRojo = new boolean[10][10];
         //stringDividida(operadorSopaDeLetras, matrizDeSopa);
         int casos = 0;
-        //printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+        printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
         while (casos < 5) {
             System.out.println();
             System.out.println("Ingrese una palabra:");
             String palabraUsuario = input.nextLine();
-            if (palabraValida(palabraUsuario)) {
-
-               /* if (EncontraPalabra(matrizDeSopa, palabraUsuario, matrizDeSopaRojo)) {
+            if (/*palabraValida(palabraUsuario)*/true) {
+                if (/*EncontraPalabra(matrizDeSopa, palabraUsuario, matrizDeSopaRojo)*/true) {
                     casos++;
                     System.out.println("Correcto!!!");
                     System.out.println();
-                   PrintearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+                   printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
                 } else {
                     System.out.println("Incorrecto");
                     System.out.println();
-                   PrintearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
-                }*/
+                   printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+                }
             } else {
                 System.out.println("Palabra no valida");
-               // PrintearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+                printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
             }
         }
     }
     /**
-     * With this function we are verifying if the input is valid.
-     * We will use an if loop to verify if the word length is less or the same as 10 characters
-     * and also if it's higher than 3 characters.
-     * Also, in another if it will verify if the word is in lower case, if it is, it will return false, making it a non-valid word.
-     * If the word is valid, it will return true, else, it will return false.
-     * */
-    public static boolean palabraValida(String palabra) {
-        if (palabra.length() <= 10 && palabra.length() > 3){
-            if (palabra.equals(palabra.toLowerCase())) {
-                return false;
+     * This function is responsible for printing the matrizNormal. If the matrizRoja has a TRUE value, it will be printed red.
+     * @param matrizNormal It is the char matrix, with the alphabet soup values
+     * @param matrizRoja It is the boolean matrix, with the true values where the word has been found
+     */
+    public static void printearMatrizFinal(char[][] matrizNormal, boolean[][] matrizRoja) {
+        for (int k = 0; k < 10; k++) {
+            for (int z = 0; z < 10; z++) {
+                if (matrizRoja[k][z] == true) {
+                    System.out.print("\u001B[31m" + matrizNormal[k][z] + " " + "\u001B[0m");
+                } else {
+                    System.out.print(matrizNormal[k][z] + " ");
+                }
             }
-            return true;
-        } else {
-            return  false;
+            System.out.println();
         }
     }
+
 }
