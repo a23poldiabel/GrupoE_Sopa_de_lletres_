@@ -10,7 +10,7 @@ class Test_encontraPalabra {
     boolean[][] trobat = new boolean[10][10];
     @BeforeEach
     void setUp() {
-        //inicialitzem una sopa i una cadena que es la font de la sopa
+        //inicialitzem una sopa i una cadena que es la font de la Sopa
         char lletra = 'A';
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
