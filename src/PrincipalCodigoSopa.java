@@ -174,6 +174,33 @@ public class PrincipalCodigoSopa {
         }
         return true;
     }
+
+    /**
+     * fraseValida: It may seem false at first glance, but the necessary conditions are applied to make it 'true'.
+     * In the 'while' loop, a System.out.println() is used to input the word puzzle phrase, and 'frase' is understood as the next input.
+     * In the 'if' statement, 'frase' is interpreted in the 'validarFrase' function, and the specified conditions are applied in its instance (100 characters and only A-Z). At this point, 'fraseValida = true'.
+     * In the 'else' statement, 'fraseValida' is still understood as 'false,' and the loop is repeated once again.
+     */
+
+    /**
+     * This function checks that the first input with the string to create the puzzle comply with the condicions.
+     * @param input This input contain the 100 characters phrase.
+     * @return
+     */
+
+    public static String fraseValida(Scanner input) {
+        System.out.println("Ingresa la frase para crear la sopa de letras:");
+        String frase = "";
+        while(true) {
+            frase = input.nextLine();
+            if (frase.length() == 100 && frase.matches("^[A-Z]*$")) {
+                break;
+            } else {
+                System.out.println("La frase no cumple las condiciones, intentalo de nuevo.");
+            }
+        }
+        return frase;
+    }
 }
 
 
