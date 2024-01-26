@@ -11,7 +11,7 @@ public class PrincipalCodigoSopa {
         //stringDividida(operadorSopaDeLetras, matrizDeSopa);
         int casos = 0;
         //printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
-        while (casos < 5) {
+        /*while (casos < 5) {
             System.out.println();
             System.out.println("Ingrese una palabra:");
             String palabraUsuario = input.nextLine();
@@ -27,13 +27,14 @@ public class PrincipalCodigoSopa {
                     System.out.println();
                    PrintearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
                 }*/
-            } else {
+            } /*else {
                 System.out.println("Palabra no valida");
                // PrintearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+
             }
         }
     }
-
+*/
     /**
      * fraseValida: It may seem false at first glance, but the necessary conditions are applied to make it 'true'.
      * In the 'while' loop, a System.out.println() is used to input the word puzzle phrase, and 'frase' is understood as the next input.
@@ -64,21 +65,3 @@ public class PrincipalCodigoSopa {
             return false;
         }
     }
-    /**
-     * With this function we are verifying if the input is valid.
-     * We will use an if loop to verify if the word length is less or the same as 10 characters
-     * and also if it's higher than 3 characters.
-     * Also, in another if it will verify if the word is in lower case, if it is, it will return false, making it a non-valid word.
-     * If the word is valid, it will return true, else, it will return false.
-     * */
-    public static boolean palabraValida(String palabra) {
-        if (palabra.length() <= 10 && palabra.length() > 3){
-            if (palabra.equals(palabra.toLowerCase())) {
-                return false;
-            }
-            return true;
-        } else {
-            return  false;
-        }
-    }
-}
