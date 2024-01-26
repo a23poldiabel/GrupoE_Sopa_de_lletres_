@@ -32,12 +32,14 @@ public class PrincipalCodigoSopa {
             }
         }
     }
+
     /**
      * With this function we are verifying if the input is valid.
-     * We will use an if loop to verify if the word length is less or the same as 10 characters
-     * and also if it's higher than 3 characters.
-     * Also, in another if it will verify if the word is in lower case, if it is, it will return false, making it a non-valid word.
+     * We will use an if loop to verify if the word length is less or the same as 10 characters and also if it's higher than 3 characters.
+     * Also, in another if loop it will verify if the word is in lower case, if it is, it will return false, making it a non-valid word.
      * If the word is valid, it will return true, else, it will return false.
+     *
+     * @param palabra The input recieved to verify if it's correct.
      * */
     public static boolean palabraValida(String palabra) {
         if (palabra.length() <= 10 && palabra.length() > 3){
