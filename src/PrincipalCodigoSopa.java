@@ -40,6 +40,7 @@ public class PrincipalCodigoSopa {
      * If the word is valid, it will return true, else, it will return false.
      *
      * @param palabra The input recieved to verify if it's correct.
+     * @return
      * */
     public static boolean palabraValida(String palabra) {
         if (palabra.length() <= 10 && palabra.length() > 3){
