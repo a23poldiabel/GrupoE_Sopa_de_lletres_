@@ -49,6 +49,32 @@ public class PrincipalCodigoSopa {
             return  false;
         }
     }
+
+
+    /**
+     * This function converts a linear string of characters into a two-dimensional array.
+     * The string represents an alphabet soup and is distributed in the array.
+     * The resulting array contains the characters from the word search arranged in rows and columns.
+     *
+     * @param operadorSopaDeLetras operator The string containing the word search characters in linear format.
+     * @param matrizDeSopa The array that will store the characters of the alphabet soup based on the selected characters.
+     * @return The resulting array with the alphabet soup characters distributed with a line break on the tenth line.
+     */
+
+    public static char[][] stringDividida (String operadorSopaDeLetras, char[][] matrizDeSopa) {
+        int index =0;
+        for (int f = 0; f< 10; f++) {
+            System.out.println();
+            for (int c = 0; c < 10; c++) {
+                matrizDeSopa [f][c] = operadorSopaDeLetras.charAt(index++);
+            }
+        }
+        return matrizDeSopa;
+    }
+
+
+
+
     /**
      * This function is responsible for printing the matrizNormal. If the matrizRoja has a TRUE value, it will be printed red.
      * @param matrizNormal It is the char matrix, with the alphabet soup values
@@ -149,3 +175,5 @@ public class PrincipalCodigoSopa {
         return true;
     }
 }
+
+
