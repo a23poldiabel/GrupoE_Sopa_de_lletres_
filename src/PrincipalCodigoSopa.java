@@ -32,31 +32,17 @@ public class PrincipalCodigoSopa {
             }
         }
     }
-    /**
-     * With this function we are verifying if the input is valid.
-     * We will use an if loop to verify if the word length is less or the same as 10 characters
-     * and also if it's higher than 3 characters.
-     * If the word is valid, it will return true, else, it will return false.
-     * */
-    public static boolean palabraValida(String palabra) {
-        if (palabra.length() <= 10 && palabra.length() > 3){
-            return true;
-        } else {
-            return  false;
-
-        }
-    }
-
 
     /**
-     * Fills a two-dimensional character array with elements from a string.
+     * This function converts a linear string of characters into a two-dimensional array.
+     * The string represents an alphabet soup and is distributed in the array.
+     * The resulting array contains the characters from the word search arranged in rows and columns.
      *
-     * @param operadorSopaDeLetras The string from which characters will be taken to fill the array.
-     * @param matrizDeSopa The two-dimensional array to be filled with characters.
-     * @return The two-dimensional array filled with characters from the string.
-     *         If the length of the string is less than the size of the array, the string is looped.
-     *         If the string is longer than the size of the array, additional characters are ignored.
+     * @param operadorSopaDeLetras operator The string containing the word search characters in linear format.
+     * @param matrizDeSopa The array that will store the characters of the alphabet soup based on the selected characters.
+     * @return The resulting array with the alphabet soup characters distributed with a line break on the tenth line.
      */
+
 
     public static char[][] stringDividida (String operadorSopaDeLetras, char[][] matrizDeSopa) {
         int index =0;
