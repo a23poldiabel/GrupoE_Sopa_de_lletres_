@@ -78,11 +78,8 @@ public class PrincipalCodigoSopa {
             }
         }
         return matrizDeSopa;
+
     }
-
-
-
-
     /**
      * This function is responsible for printing the matrizNormal. If the matrizRoja has a TRUE value, it will be printed red.
      * @param matrizNormal It is the char matrix, with the alphabet soup values

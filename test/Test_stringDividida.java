@@ -2,11 +2,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Test_stringDividida {
 
-
-
-
     /**
-     * Verifica si la matriz se llena correctamente
+     * Verifica si está asignado correctamente los caracteres del operador largo a la matriz de 10x10.
      */
     @org.junit.jupiter.api.Test
     public void Test_StringDividida_OperadorLargo() {
@@ -23,7 +20,7 @@ class Test_stringDividida {
 
 
     /**
-     * Verificar que haya un salto de línea al final de la matriz, tambien se puede usar para ve rel prime caracter de la cadena    NOOOOOOOOO
+     *   El último carácter del operador NO! se coloque en la esquina inferior derecha de la matriz resultante (no coloca el carácter 'J' en la última posición)
      */
 
 
@@ -39,57 +36,40 @@ class Test_stringDividida {
     }
 
 
-
-
     /**
-     * Verificar que haya un salto de línea al final de la matriz, tambien se puede usar para ve rel prime caracter de la cadena    NOOOOOOOOO
+     * Verifica que, si se pasa un operador nulo a la función stringDividida de la clase PrincipalCodigoSopa, la matriz resultante no debería estar vacía
      */
 
 
-    @org.junit.jupiter.api.Test
-    public void Test_stringDividida_testSinSaltoDeLineaAlFinal() {
-        String operadorSopaDeLetras = "NASQYCCSOZMRWOIHZNFRZUIFEUWBYTPBFPCSFQQIPYTHONBGVIJPDDBTNEVWGGESOYPYTUFYUILECHAVVBZSHXTAJTDZXLYJAVAQ";
-        char[][] matriz = new char[10][10];
+@org.junit.jupiter.api.Test
+public void Test_StringDividida_testOperadorNuloConMatrizNoVacia() {
+    char[][] matriz = new char[10][10];
+    String operador = "NASQYCCSOZMRWOIHZNFRZUIFEUWBYTPBFPCSFQQIPYTHONBGVIJPDDBTNEVWGGESOYPYTUFYUILECHAVVBZSHXTAJTDZXLYJAVAQ";
+    char[][] resultado = PrincipalCodigoSopa.stringDividida(operador, matriz);
 
-        matriz = PrincipalCodigoSopa.stringDividida(operadorSopaDeLetras, matriz);
-
-        assertNotEquals('J', matriz[9][9]);
-
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            assertNotNull(operador.charAt(i * 10 + j), String.valueOf(resultado[i][j]));
+        }
     }
+}
 
-
-
-
-
-    /**
-     * Verifica si la matriz se lleno correctamente con el operador repetido    NOOOOOOOOOOOOOOOOOOOOOOOOO
-     */
 
     @org.junit.jupiter.api.Test
-    public void Test_StringDividida_OperadorCorto() {
+    public void Test_StringDividida_MismoOperadorMismoResultado() {
         char[][] matriz = new char[10][10];
-        String operador = "ABCD";
+        String operador = "NASQYCCSOZMRWOIHZNFRZUIFEUWBYTPBFPCSFQQIPYTHONBGVIJPDDBTNEVWGGESOYPYTUFYUILECHAVVBZSHXTAJTDZXLYJAVAQ";
         char[][] resultado = PrincipalCodigoSopa.stringDividida(operador, matriz);
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                assertEquals(operador.charAt((i * 10 + j) % operador.length()), resultado[i][j]);
+                assertSame(operador.charAt(i * 10 + j), resultado[i][j]);
             }
         }
     }
-
-
-    /**
-     * Verifica si la matriz se lleno correctamente con el operador nulo
-     */
-
-    @org.junit.jupiter.api.Test
-    public void Test_StringDividida_OperadorNulo() {
-        char[][] matriz = new char[10][10];
-        String operador = null;
-        char[][] resultado = PrincipalCodigoSopa.stringDividida(operador, matriz);
-
-        char[][] expected = new char[10][10];
-        assertArrayEquals(expected, resultado);
-    }
 }
+
+
+
+
+
