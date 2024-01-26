@@ -4,10 +4,10 @@ import java.util.Scanner;
 public class PrincipalCodigoSopa {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        //String operadorSopaDeLetras = fraseValida(input);
+        String operadorSopaDeLetras = fraseValida(input);
         char[][] matrizDeSopa = new char[10][10];
         boolean[][] matrizDeSopaRojo = new boolean[10][10];
-        //stringDividida(operadorSopaDeLetras, matrizDeSopa);
+        stringDividida(operadorSopaDeLetras, matrizDeSopa);
         int casos = 0;
           printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
         while (casos < 5) {
