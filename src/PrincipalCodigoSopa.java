@@ -1,6 +1,7 @@
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Scanner;
 
+
 public class PrincipalCodigoSopa {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -9,18 +10,22 @@ public class PrincipalCodigoSopa {
         boolean[][] matrizDeSopaRojo = new boolean[10][10];
         stringDividida(operadorSopaDeLetras, matrizDeSopa);
         int casos = 0;
-          printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+        printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+        String[] palabrasCorrectas = {"Volvo", "BMW", "Ford", "Mazda","Nissan"};
         while (casos < 5) {
             System.out.println();
             System.out.println("Ingrese una palabra:");
             String palabraUsuario = input.nextLine();
-            if (palabraValida(palabraUsuario)) {
-
+            if (palabrasCorrectas[0].equals(palabraUsuario) || palabrasCorrectas[1].equals(palabraUsuario) || palabrasCorrectas[2].equals(palabraUsuario) || palabrasCorrectas[3].equals(palabraUsuario)|| palabrasCorrectas[4].equals(palabraUsuario)){
+                System.out.println("Palabra repetida");
+                printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+            } else if (palabraValida(palabraUsuario)) {
                 if (encontraPalabra(matrizDeSopa, palabraUsuario, matrizDeSopaRojo)) {
+                    palabrasCorrectas[casos] = palabraUsuario;
                     casos++;
                     System.out.println("Correcto!!!");
                     System.out.println();
-                   printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
+                    printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
                 } else {
                     System.out.println("Incorrecto");
                     System.out.println();
