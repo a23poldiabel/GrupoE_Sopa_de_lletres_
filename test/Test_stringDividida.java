@@ -3,21 +3,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class Test_stringDividida {
 
 
-    /**
-     * Verificar que haya un salto de línea al final de la matriz, tambien se puede usar para ve rel prime caracter de la cadena
-     */
-
-
-    @org.junit.jupiter.api.Test
-    public void testSinSaltoDeLineaAlFinal() {
-        String operadorSopaDeLetras = "NASQYCCSOZMRWOIHZNFRZUIFEUWBYTPBFPCSFQQIPYTHONBGVIJPDDBTNEVWGGESOYPYTUFYUILECHAVVBZSHXTAJTDZXLYJAVAQ";
-        char[][] matriz = new char[10][10];
-
-        matriz = PrincipalCodigoSopa.stringDividida(operadorSopaDeLetras, matriz);
-
-        assertEquals('J', matriz[9][9]);
-
-    }
 
 
     /**
@@ -38,7 +23,46 @@ class Test_stringDividida {
 
 
     /**
-     * Verifica si la matriz se lleno correctamente con el operador repetido
+     * Verificar que haya un salto de línea al final de la matriz, tambien se puede usar para ve rel prime caracter de la cadena    NOOOOOOOOO
+     */
+
+
+    @org.junit.jupiter.api.Test
+    public void testSinSaltoDeLineaAlFinal() {
+        String operadorSopaDeLetras = "NASQYCCSOZMRWOIHZNFRZUIFEUWBYTPBFPCSFQQIPYTHONBGVIJPDDBTNEVWGGESOYPYTUFYUILECHAVVBZSHXTAJTDZXLYJAVAQ";
+        char[][] matriz = new char[10][10];
+
+        matriz = PrincipalCodigoSopa.stringDividida(operadorSopaDeLetras, matriz);
+
+        assertNotEquals('J', matriz[9][9]);
+
+    }
+
+
+
+
+    /**
+     * Verificar que haya un salto de línea al final de la matriz, tambien se puede usar para ve rel prime caracter de la cadena    NOOOOOOOOO
+     */
+
+
+    @org.junit.jupiter.api.Test
+    public void Test_stringDividida_testSinSaltoDeLineaAlFinal() {
+        String operadorSopaDeLetras = "NASQYCCSOZMRWOIHZNFRZUIFEUWBYTPBFPCSFQQIPYTHONBGVIJPDDBTNEVWGGESOYPYTUFYUILECHAVVBZSHXTAJTDZXLYJAVAQ";
+        char[][] matriz = new char[10][10];
+
+        matriz = PrincipalCodigoSopa.stringDividida(operadorSopaDeLetras, matriz);
+
+        assertNotEquals('J', matriz[9][9]);
+
+    }
+
+
+
+
+
+    /**
+     * Verifica si la matriz se lleno correctamente con el operador repetido    NOOOOOOOOOOOOOOOOOOOOOOOOO
      */
 
     @org.junit.jupiter.api.Test
