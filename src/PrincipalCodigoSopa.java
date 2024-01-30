@@ -9,18 +9,26 @@ public class PrincipalCodigoSopa {
         boolean[][] matrizDeSopaRojo = new boolean[10][10];
         stringDividida(operadorSopaDeLetras, matrizDeSopa);
         int casos = 0;
+        boolean[] palabrasIngresadas = new boolean[5];
         printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
         String[] palabrasCorrectas = {"Volvo", "BMW", "Ford", "Mazda","Nissan"};
         while (casos < 5) {
             System.out.println();
             System.out.println("Ingrese una palabra:");
             String palabraUsuario = input.nextLine();
-            if (palabrasCorrectas[0].equals(palabraUsuario) || palabrasCorrectas[1].equals(palabraUsuario) || palabrasCorrectas[2].equals(palabraUsuario) || palabrasCorrectas[3].equals(palabraUsuario)|| palabrasCorrectas[4].equals(palabraUsuario)){
+            boolean esPalabraCorrecta = false;
+            for (int i = 0; i < palabrasCorrectas.length; i++){
+                if (palabrasCorrectas[i].equals(palabraUsuario)){
+                    esPalabraCorrecta = true;
+                    break;
+                }
+            }
+            if (esPalabraCorrecta){
                 System.out.println("Palabra repetida");
                 printearMatrizFinal(matrizDeSopa, matrizDeSopaRojo);
             } else if (palabraValida(palabraUsuario)) {
                 if (encontraPalabra(matrizDeSopa, palabraUsuario, matrizDeSopaRojo)) {
-                    palabrasCorrectas[casos] = palabraUsuario;
+                    palabrasIngresadas[casos] = true;
                     casos++;
                     System.out.println("Correcto!!!");
                     System.out.println();
@@ -78,8 +86,6 @@ public class PrincipalCodigoSopa {
         }
         return matrizDeSopa;
     }
-
-
 
 
     /**
@@ -173,13 +179,6 @@ public class PrincipalCodigoSopa {
         }
         return true;
     }
-
-    /**
-     * fraseValida: It may seem false at first glance, but the necessary conditions are applied to make it 'true'.
-     * In the 'while' loop, a System.out.println() is used to input the word puzzle phrase, and 'frase' is understood as the next input.
-     * In the 'if' statement, 'frase' is interpreted in the 'validarFrase' function, and the specified conditions are applied in its instance (100 characters and only A-Z). At this point, 'fraseValida = true'.
-     * In the 'else' statement, 'fraseValida' is still understood as 'false,' and the loop is repeated once again.
-     */
 
     /**
      * fraseValida: Appears false at first glance and is subjected to the necessary conditions to make it 'true'.f
