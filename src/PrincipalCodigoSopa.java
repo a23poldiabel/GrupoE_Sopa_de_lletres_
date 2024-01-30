@@ -1,7 +1,6 @@
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Scanner;
 
-
 public class PrincipalCodigoSopa {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -78,8 +77,11 @@ public class PrincipalCodigoSopa {
             }
         }
         return matrizDeSopa;
-
     }
+
+
+
+
     /**
      * This function is responsible for printing the matrizNormal. If the matrizRoja has a TRUE value, it will be printed red.
      * @param matrizNormal It is the char matrix, with the alphabet soup values
@@ -140,10 +142,6 @@ public class PrincipalCodigoSopa {
                 return false;
             }
         }
-        if (matrizDeSopaRojo[fila][columna + 1] == true) {
-            System.out.println("Palabra repetida");
-            return false;
-        }
         for (int i = 0; i < longitud; i++) {
             matrizDeSopaRojo[fila][columna + i] = true;
         }
@@ -169,10 +167,6 @@ public class PrincipalCodigoSopa {
             if (matriu[fila + i][columna] != palabra.charAt(i)) {
                 return false;
             }
-        }
-        if (matrizDeSopaRojo[fila + 1][columna] == true) {
-            System.out.println("Palabra repetida");
-            return false;
         }
         for (int i = 0; i < longitud; i++) {
             matrizDeSopaRojo[fila + i][columna] = true;
@@ -218,5 +212,3 @@ public class PrincipalCodigoSopa {
         return frase.length() == 100 && frase.matches("^[a-zA-Z]*$");
     }
 }
-
-
